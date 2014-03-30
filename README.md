@@ -17,6 +17,7 @@ on, run the following:
   $ sudo apt-get install python-setuptools python-dev python-pip
 ```
 
+
 After you have cloned this repo, you will also need to install [PyEphem](http://rhodesmill.org/pyephem/) and
 [ouimeaux](https://github.com/iancmcc/ouimeaux). Here is a quick and dirty example of how you can get this 
 installed, tho, there are several other methods:
@@ -27,15 +28,22 @@ installed, tho, there are several other methods:
 ```
 
 
-##Example run
+##Example runs
 
 ```
   $ python peekaboo.py list
   The following WeMo switches were found:
    -> Front Lights
 
-  $ python peekaboo.py status "Front Lights"
+  $ python peekaboo.py --device "Front Lights" status
   Device (Front Lights): Off.
+
+  $ python peekaboo.py --verbose --device "Front Lights" on
+  Action: tun on device: Front Lights
+
+  $ python peekaboo.py -d "Front Lights" status -v
+  Action: check state.
+  Device (Front Lights): On.
 ```
 
 
@@ -46,8 +54,8 @@ for me. Then, later in the evening, I have peekaboo shut the lights off for me.
 
 ```
   # check for sunset to turn on front lights
-  20 16 * * * python /home/cturra/peekaboo/peekaboo.py sunset "Front Lights"
+  20 16 * * * python /home/cturra/peekaboo/peekaboo.py --device "Front Lights" sunset
 
   # turn the lights off for the night
-  30 23 * * * python /home/cturra/peekaboo/peekaboo.py off "Front Lights"
+  30 23 * * * python /home/cturra/peekaboo/peekaboo.py --device "Front Lights" off
 ```
