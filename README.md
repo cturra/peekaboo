@@ -9,7 +9,7 @@ time delta) and off later in the evening.
 
 ##Installation
 
-###Debian/Ubuntu
+####Debian/Ubuntu
 You will need a couple python packages installed before you can complete the Peekaboo installation. Before moving
 on, run the following:
 
@@ -17,7 +17,7 @@ on, run the following:
   $ sudo apt-get install python-setuptools python-dev python-pip
 ```
 
-
+---
 After you have cloned this repo, you will also need to install [PyEphem](http://rhodesmill.org/pyephem/) and
 [ouimeaux](https://github.com/iancmcc/ouimeaux). Here is a quick and dirty example of how you can get this 
 installed, tho, there are several other methods:
@@ -26,6 +26,11 @@ installed, tho, there are several other methods:
   $ git clone https://github.com/cturra/peekaboo
   $ pip install -r peekaboo/requirements.txt
 ```
+
+
+##Configuration
+All configurations can be found in the `config/settings.cfg` file. At this point, all the settings options 
+are for sunset/sunrise calculations. If you're not using that feature, you don't need to configure anything :)
 
 
 ##Example runs
