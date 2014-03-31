@@ -7,7 +7,7 @@ import os
 import sys
 import random
 
-CONFIG_FILE = 'config/settings.cfg'
+CONFIG_FILE = os.path.dirname(__file__)+'/config/settings.cfg'
 
 def read_config(SECTION, ATTRIBUTE):
   if os.path.isfile(CONFIG_FILE):
