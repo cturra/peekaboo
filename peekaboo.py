@@ -46,6 +46,9 @@ if __name__ == "__main__":
   # return a list of the switch devices
   if WEMO_ACTION.lower() == 'list':
     if VERBOSE: print "Action: listing all wemo switch devices."
+    # first, run a discover in case there are new devices on the network
+    env.discover(seconds=3)
+    # now get a list of switches
     switches = env.list_switches()
     if (len(switches) > 0):
       print "The following WeMo switches were found:"
