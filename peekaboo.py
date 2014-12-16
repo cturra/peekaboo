@@ -40,7 +40,7 @@ if __name__ == "__main__":
   WEMO_ACTION = args.action
   VERBOSE     = args.verbose
 
-  env = Environment()
+  env = Environment(with_cache=False)
   env.start()
 
   # return a list of the switch devices
